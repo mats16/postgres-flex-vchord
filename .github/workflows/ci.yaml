@@ -37,12 +37,13 @@ jobs:
         with:
           build-args: |
             PG_MAJOR_VERSION=17
+            VCHORD_VERSION=0.5.3
             VERSION=${{ steps.get-latest-tag.outputs.tag }}
           context: .
           file: ./pg17/Dockerfile
           push: true
           tags: |
-            mats16/postgres-flex-vchord:17
+            mats16/postgres-flex-vchord:17-0.5.3
       -
         name: Postgres 17 VectorChord Image digest
         run: echo ${{ steps.docker_build_17_vchord.outputs.digest }}
