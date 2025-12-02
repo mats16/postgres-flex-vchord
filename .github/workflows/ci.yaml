@@ -43,7 +43,7 @@ jobs:
           file: ./pg17/Dockerfile
           push: true
           tags: |
-            mats16/postgres-flex-vchord:17-0.5.3
+            mats16/postgres-flex-vchord:17
       -
         name: Postgres 17 VectorChord Image digest
         run: echo ${{ steps.docker_build_17_vchord.outputs.digest }}
