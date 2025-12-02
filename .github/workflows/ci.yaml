@@ -32,7 +32,7 @@ jobs:
         uses: "WyriHaximus/github-action-get-previous-tag@v1"
       -
         name: Build and push Postgres 17 with VectorChord
-        id: docker_build_17_timescaledb
+        id: docker_build_17_vchord
         uses: docker/build-push-action@v6
         with:
           build-args: |
@@ -44,8 +44,5 @@ jobs:
           tags: |
             mats16/postgres-flex-vchord:17
       -
-        name: Postgres 17 Image digest
-        run: echo ${{ steps.docker_build_17.outputs.digest }}
-      -
-        name: Postgres 17 TimescaleDB Image digest
-        run: echo ${{ steps.docker_build_17_timescaledb.outputs.digest }}
+        name: Postgres 17 VectorChord Image digest
+        run: echo ${{ steps.docker_build_17_vchord.outputs.digest }}
